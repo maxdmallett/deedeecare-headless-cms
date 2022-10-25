@@ -1,9 +1,13 @@
 import Head from 'next/head'
 
-const CommonHead = () => {
+interface IProps {
+    title?: string;
+}
+
+const CommonHead = (props:IProps) => {
     return (
         <Head>
-            <title>Dee Dee Care | Passionate About People</title>
+            <title>{props.title ? `${props.title} - ` : ""}Dee Dee Care - Passionate About People</title>
             <meta name="description" content="Dee Dee Care is small healthcare provider based in Norwich, Norfolk. We are passionate about people and understand the importance of well-being, encouragement and listening. We provide services such as homecare, supporting carers, supported living, hoarding support and care home support." />
             <meta name="author" content="Max Mallett" />
             <link rel="icon" href="/favicon.png" />

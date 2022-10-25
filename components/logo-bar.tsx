@@ -1,14 +1,17 @@
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const LogoBar = () => {
     return (
         <div id="logo-bar" className="container grid-lg">
             <div id="logo">
-                <a href="home.html">
-                    <Image src="/images/deedeecare-logo.svg" alt="Dee Dee Care" width={113} height={90}/>
-                </a>
+                <Link href="/">
+                    <a>
+                        <Image src="/images/deedeecare-logo.svg" alt="Dee Dee Care" width={113} height={90}/>
+                    </a>
+                </Link>
             </div>
             <div id="logo-bar-tel">
                 <a href="tel:01603 629218">

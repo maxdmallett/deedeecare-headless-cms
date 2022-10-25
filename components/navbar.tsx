@@ -1,18 +1,20 @@
+import Link from "next/link"
+
 const Navbar = () => {
     return (
         <nav id="nav-bar" className="hide-md">
             <div className="container grid-lg ">
                 <nav className="main_nav">
                     <ul>
-                        <li><a href="home.html">Home</a></li>
+                        <li><Link href="/">Home</Link></li>
                         <li><a data-scroll-to="about-us">About</a></li>
                         <li className="submenu">
                             <a data-scroll-to="services">Services</a>
                             <ul className="dropdown">
-                                <li><a href="supporting-carers.html">Supporting Carers</a></li>
-                                <li><a href="mental-health-care.html">Mental Health Care</a></li>
-                                <li><a href="homecare.html">Homecare</a></li>
-                                <li><a href="supported-living.html">Supported Living</a></li>
+                                <li><Link href="/supporting-carers">Supporting Carers</Link></li>
+                                <li><Link href="/mental-health-care">Mental Health Care</Link></li>
+                                <li><Link href="/homecare">Homecare</Link></li>
+                                <li><Link href="/supported-living">Supported Living</Link></li>
                             </ul>
                         </li>
                         <li><a data-scroll-to="testimonials">Testimonials</a></li>
