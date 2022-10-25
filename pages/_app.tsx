@@ -1,5 +1,5 @@
 import '../styles/thirdparty/spectre.min.css'
-import '../styles/style.css'
+import '../styles/styles.scss'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
 
