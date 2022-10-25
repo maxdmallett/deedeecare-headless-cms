@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -56,7 +58,9 @@ const Home: NextPage = () => {
                         </a>
                     </div>
                     <div id="logo-bar-tel">
-                        <a href="tel:01603 629218"><i className="fa fa-phone" aria-hidden="true"></i><span>01603 629218</span></a>
+                        <a href="tel:01603 629218">
+                            <FontAwesomeIcon icon={faPhone} />
+                        <span>01603 629218</span></a>
                     </div>
                     <div id="logo-bar-fb" className="hide-md">
                         <a href="https://www.facebook.com/pages/category/Home-Health-Care-Service/Dee-Dee-Care-233385160895345/" target="_blank" rel='noreferrer'>
@@ -256,20 +260,20 @@ const Home: NextPage = () => {
                                     <div className="columns">
                                         <div className="column contact-feature-column col-4 col-md-12">
                                             <div className="contact-feature double-line">
-                                                <i className="fa fa-phone"></i>
+                                                <FontAwesomeIcon icon={faPhone} />
                                                 <p><a href="tel:01603 629218">01603 629218</a></p>
                                                 <p><a href="tel:077350 99987">077350 99987</a></p>
                                             </div>
                                         </div>
                                         <div className="column contact-feature-column col-4 col-md-12">
                                             <div className="contact-feature">
-                                                <i className="fa fa-envelope-o"></i>
+                                                <FontAwesomeIcon icon={faEnvelope} />
                                                 <p><a href="mailto:contact@deedeecare.co.uk?Subject=Website%20Enquiry">contact@deedeecare.co.uk</a></p>
                                             </div>
                                         </div>
                                         <div className="column contact-feature-column col-4 col-md-12">
                                             <div className="contact-feature double-line">
-                                                <i className="fa fa-map-marker"></i>
+                                                <FontAwesomeIcon icon={faLocationDot} />
                                                 <p>Arnold Miller Road<br />
                                                 Norwich, Norfolk</p>
                                             </div>

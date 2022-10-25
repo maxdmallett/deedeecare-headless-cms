@@ -219,21 +219,22 @@ h2 {
     transform: translateX(-50%);
   }
 }
-#logo-bar #logo-bar-tel i {
-  font-size: 22px;
+#logo-bar #logo-bar-tel a {
+  display: flex;
+  align-items: center;
+}
+#logo-bar #logo-bar-tel a svg {
   color: #8ac43f;
-  vertical-align: middle;
-  transform: translateY(2px);
   margin-right: 3px;
+  height: 20px;
+  margin-top: 2px;
 }
 @media screen and (max-width: 600px) {
-  #logo-bar #logo-bar-tel i {
-    font-size: 18px;
+  #logo-bar #logo-bar-tel a svg {
     margin-right: 1px;
-    transform: translateY(1px);
   }
 }
-#logo-bar #logo-bar-tel span {
+#logo-bar #logo-bar-tel a span {
   font-size: 16px;
   font-weight: 600;
   color: #404040;
@@ -241,7 +242,7 @@ h2 {
   vertical-align: middle;
 }
 @media screen and (max-width: 600px) {
-  #logo-bar #logo-bar-tel span {
+  #logo-bar #logo-bar-tel a span {
     font-size: 14px;
   }
 }
@@ -793,9 +794,8 @@ h2 {
   color: #50596c;
   font-size: 18px;
 }
-#contact-us #contact-icons-container #contact-icons-section .contact-feature-column .contact-feature i.fa {
+#contact-us #contact-icons-container #contact-icons-section .contact-feature-column .contact-feature svg {
   color: #8ac43f;
-  font-size: 50px;
   margin-bottom: 20px;
   height: 50px;
   padding: 0px;
