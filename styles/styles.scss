@@ -134,6 +134,8 @@ p {
         position: absolute;
         top: 0;
         right: 0;
+        background: transparent;
+        border: none;
     
         &::before, &::after {
             content: '';
@@ -278,6 +280,8 @@ p {
         margin-left: auto;
         align-self: center;
         padding: 10px;
+        background: transparent;
+        border: none;
     
         #hamburger-icon {
             width: 30px;

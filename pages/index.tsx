@@ -3,7 +3,6 @@ import LogoBar from '../components/logo-bar';
 import Navbar from '../components/navbar';
 import Hero from '../components/hero';
 import AboutUs from '../components/about-us';
-import MobileMenu from '../components/mobile-menu';
 import CoreValues from '../components/core-values';
 import Services from '../components/services';
 import Testimonials from '../components/testimonials';
@@ -17,7 +16,6 @@ const Home: NextPage = () => {
         <div>
             <CommonHead />
             <main>
-                <MobileMenu />
                 <LogoBar />
                 <Navbar />
                 <Hero />

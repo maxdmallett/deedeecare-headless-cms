@@ -12,7 +12,7 @@ const Contact = () => {
 
                     <div id="social-icon-fb" className="show-sm">
                         <a href="https://www.facebook.com/pages/category/Home-Health-Care-Service/Dee-Dee-Care-233385160895345/" target="_blank" rel="noreferrer">
-                            <Image src="/images/facebook.svg" alt="Facebook" layout='fill'/>
+                            <Image src="/images/facebook.svg" alt="Facebook" width={30} height={30}/>
                         </a>
                     </div>
                         
