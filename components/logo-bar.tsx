@@ -10,11 +10,13 @@ const LogoBar = () => {
     const [mobMenuOpen, setMobMenuOpen] = useState(false);
 
     const handleHamburgerClick = () => {
-        setMobMenuOpen(!mobMenuOpen);
+        setMobMenuOpen(true);
+        document.body.style.overflow = 'hidden';
     }
 
     const closeMobMenu = () => {
         setMobMenuOpen(false);
+        document.body.style.overflow = 'auto';
     }
 
     return (
