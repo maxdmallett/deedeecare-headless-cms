@@ -25,16 +25,17 @@ const LogoBar = () => {
 
             <div id="logo-bar" className="container grid-lg">
                 <div id="logo">
-                    <Link href="/">
+                    <Link href="/" legacyBehavior passHref>
                         <a>
-                            <Image src="/images/deedeecare-logo.svg" alt="Dee Dee Care" width={113} height={90}/>
+                            <Image src="/images/deedeecare-logo.svg" alt="Dee Dee Care" layout='fill' />
                         </a>
                     </Link>
                 </div>
                 <div id="logo-bar-tel">
                     <a href="tel:01603 629218">
                         <FontAwesomeIcon icon={faPhone} />
-                    <span>01603 629218</span></a>
+                        <span>01603 629218</span>
+                    </a>
                 </div>
                 <div id="logo-bar-fb" className="hide-md">
                     <Link href="https://www.facebook.com/pages/category/Home-Health-Care-Service/Dee-Dee-Care-233385160895345/" target="_blank" rel='noreferrer'>
