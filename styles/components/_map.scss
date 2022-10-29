@@ -1,0 +1,7 @@
+#map {
+    iframe {
+        @media screen and (max-width: $max-width-sm) {
+            height: 400px;
+        }
+    }
+}

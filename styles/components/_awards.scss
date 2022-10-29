@@ -1,0 +1,29 @@
+/* --- Awards --- */
+#awards {
+    padding: 100px 0;
+    text-align: center;
+
+    .image-holder {
+        padding: 0 30px;
+        display: inline-block;
+
+        @media screen and (max-width: $max-width-sm) {
+            padding: 0 15px;
+            max-width: 100%;
+
+            &:not(:first-child) {
+                margin-top: 20px;
+            }
+        }
+
+        img {
+            height: 100px;
+
+            @media screen and (max-width: $max-width-sm) {
+                max-height: 100px;
+                height: auto;
+                max-width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+/* --- About us --- */
+#about-us {
+    padding: 100px 0;
+
+    #about-us-text {
+        text-align: center;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: $max-width-md) {
+            margin-bottom: 30px;
+
+            @media screen and (max-width: $max-width-sm) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    #about-us-img {
+        margin: auto;
+        height: 337px;
+        background-color: white;
+        background-image: url(../../public/images/about-us.jpg);
+        background-repeat: no-repeat;
+        background-position-x: center;
+
+        @media screen and (max-width: $max-width-sm) {
+            height: 250px;
+        }
+    }
+}

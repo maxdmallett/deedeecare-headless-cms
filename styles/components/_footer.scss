@@ -1,0 +1,16 @@
+/* --- Footer --- */
+#footer {
+    background-color: #222222;
+    color: #777;
+    padding: 20px 0 20px 0;
+    text-align: center;
+
+    p {
+        margin: 0;
+
+        @media screen and (max-width: $max-width-sm) {
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+    }
+}
