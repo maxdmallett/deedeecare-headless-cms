@@ -1,9 +1,46 @@
+import Slider from 'react-slick';
+
+interface SliderSettings {
+    slidesToShow?: number;
+    autoplay?: boolean;
+    autoplaySpeed?: number;
+    dots?: boolean;
+    breakpoint?: number;
+    arrows?: boolean;
+    settings?: SliderSettings;
+    responsive?: SliderSettings[];
+}
+
 const Testimonials = () => {
+
+    const settings: SliderSettings = {
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 1365,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1
+                }
+            },
+        ]
+    };
+
     return (
         <section id="testimonials">
             <div className="container grid-xl ">
                 <h2>Testimonials</h2>
-                <div className="testimonials-carousel">
+                <Slider {...settings}>
                     <div className="quote">
                         <p>
                             &quot;Dionne and her team provide outstanding all-around care. Every aspect is covered to suit our needs and the team are passionate about the persons well-being. I would not hesitate to recommend this caring, lovely team.&quot;
@@ -34,8 +71,7 @@ const Testimonials = () => {
                         </p>
                         <p className="quote-ref">Christina, client</p>
                     </div>
-                    
-                </div>
+                </Slider>
             </div>		
         </section>
     )
