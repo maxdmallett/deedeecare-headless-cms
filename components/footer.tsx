@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <footer id="footer">
             <div className="container">
-                <p>Copyright © 2022 Dee Dee Care. Website created by Max Mallett.</p>
+                <p>Copyright &#169; {new Date().getFullYear()} Dee Dee Care. Website created by Max Mallett.</p>
             </div>
         </footer>
     )
