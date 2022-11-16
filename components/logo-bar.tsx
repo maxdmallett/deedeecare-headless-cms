@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useState } from 'react';
+import { globals } from '../data/globals';
 
 const LogoBar = () => {
 
@@ -32,9 +33,9 @@ const LogoBar = () => {
                     </Link>
                 </div>
                 <div id="logo-bar-tel">
-                    <a href="tel:01603 629218">
+                    <a href={`tel:${globals.contactInfo.landlineNumber}`}>
                         <FontAwesomeIcon icon={faPhone} />
-                        <span>01603 629218</span>
+                        <span>{globals.contactInfo.landlineNumber}</span>
                     </a>
                 </div>
                 <div id="logo-bar-fb" className="hide-md">

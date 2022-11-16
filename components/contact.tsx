@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { globals } from '../data/globals';
 
 const Contact = () => {
     return (
@@ -22,14 +23,18 @@ const Contact = () => {
                                 <div className="column contact-feature-column col-4 col-md-12">
                                     <div className="contact-feature double-line">
                                         <FontAwesomeIcon icon={faPhone} />
-                                        <p><a href="tel:01603 629218">01603 629218</a></p>
-                                        <p><a href="tel:077350 99987">077350 99987</a></p>
+                                        <p><a href={`tel:${globals.contactInfo.landlineNumber}`}>{globals.contactInfo.landlineNumber}</a></p>
+                                        <p><a href={`tel:${globals.contactInfo.mobileNumber}`}>{globals.contactInfo.mobileNumber}</a></p>
                                     </div>
                                 </div>
                                 <div className="column contact-feature-column col-4 col-md-12">
                                     <div className="contact-feature">
                                         <FontAwesomeIcon icon={faEnvelope} />
-                                        <p><a href="mailto:contact@deedeecare.co.uk?Subject=Website%20Enquiry">contact@deedeecare.co.uk</a></p>
+                                        <p>
+                                            <a href={`mailto:${globals.contactInfo.email}?Subject=Website%20Enquiry`}>
+                                                {globals.contactInfo.email}
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="column contact-feature-column col-4 col-md-12">
