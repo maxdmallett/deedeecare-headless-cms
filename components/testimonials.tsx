@@ -12,30 +12,54 @@ interface SliderSettings {
     responsive?: SliderSettings[];
 }
 
+const settings: SliderSettings = {
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    dots: true,
+    responsive: [
+        {
+            breakpoint: 1365,
+            settings: {
+                arrows: false,
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                slidesToShow: 1
+            }
+        },
+    ]
+};
+
 const Testimonials = () => {
 
-    const settings: SliderSettings = {
-        slidesToShow: 3,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        dots: true,
-        responsive: [
-            {
-                breakpoint: 1365,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 2
+    fetch(`https://graphql.contentful.com/content/v1/spaces/a2slzu40iyz7/environments/master`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer [YOUR_TOKEN]`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            query: `query testimonialCollectionQuery {
+                testimonialCollection {
+                    items {
+                        client,
+                        quote
+                    }
                 }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 1
-                }
-            },
-        ]
-    };
+            }`
+        }),
+    })
+    .then(response => response.json())
+    .then(json => {
+        const { data } = json;
+        console.log(data.postCollection.items);
+        // [ { title: "Hello world"} ]
+    });
 
     return (
         <section id="testimonials">
