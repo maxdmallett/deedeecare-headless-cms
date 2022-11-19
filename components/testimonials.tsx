@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import { testimonalList } from '../data/testimonials';
 
 interface SliderSettings {
     slidesToShow?: number;
@@ -35,31 +35,48 @@ const settings: SliderSettings = {
     ]
 };
 
+interface ITestimonial {
+    client: string;
+    quote: string;
+}
+
 const Testimonials = () => {
 
-    fetch(`https://graphql.contentful.com/content/v1/spaces/a2slzu40iyz7/environments/master`, {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer [YOUR_TOKEN]`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            query: `query testimonialCollectionQuery {
-                testimonialCollection {
-                    items {
-                        client,
-                        quote
+    const [testimonials, setTestimonials] = useState<ITestimonial[] | null>(null);
+
+    useEffect(() => {
+        fetch(`https://graphql.contentful.com/content/v1/spaces/a2slzu40iyz7/environments/master`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_API_KEY}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                query: `query testimonialCollectionQuery {
+                    testimonialCollection {
+                        items {
+                            client,
+                            quote
+                        }
                     }
-                }
-            }`
-        }),
-    })
-    .then(response => response.json())
-    .then(json => {
-        const { data } = json;
-        console.log(data.postCollection.items);
-        // [ { title: "Hello world"} ]
-    });
+                }`
+            }),
+        })
+        .then(response => response.json())
+        .then(json => {
+            const { data } = json;
+            if (!data) {
+                console.log('failed to fetch testimonials') 
+                return;
+            }
+            setTestimonials(data.testimonialCollection.items);
+        }).
+        catch(error => {
+            throw error;
+        });
+    }, []);
+
+    if (!testimonials) return null;
 
     return (
         <section id="testimonials">
@@ -67,14 +84,14 @@ const Testimonials = () => {
                 <h2>Testimonials</h2>
                 <Slider {...settings}>
                     {
-                       testimonalList.map((testimonial, index) => {
+                       testimonials.map((testimonial, index) => {
                             return (
                                 <div key={`testimonial-${index}`}>
                                     <p>
                                         &quot;{testimonial.quote}&quot;
                                     </p>
                                     <p className="quote-ref">
-                                        {testimonial.clientName}
+                                        {testimonial.client}
                                     </p>
                                 </div>
                             )
