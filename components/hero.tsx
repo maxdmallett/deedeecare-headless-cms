@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Hero = () => {
     return (
         <header id="hero">
@@ -6,7 +8,11 @@ const Hero = () => {
                     <div className="column col-8 col-md-12">
                         <h1>Passionate About People</h1>
                         <p>Dee Dee Care is a small, independent healthcare provider based in Norwich, providing high-quality care in a variety of settings.</p>
-                        <a className="button shadow" data-scroll-to="about-us">Find out more</a>
+                        <Link href="#about-us" >
+                            <a className="button shadow">
+                                Find out more
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@
     display: block;
     font-weight: 600;
     border-radius: 6px;
+    user-select: none;
 
     &.shadow {
         box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.16);
