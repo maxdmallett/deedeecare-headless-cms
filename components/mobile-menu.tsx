@@ -1,18 +1,18 @@
 import Link from "next/link";
 
 interface IProps {
-    open: boolean;
-    closeCallback: () => void
+    open?: boolean;
+    closeCallback?: () => void
 }
 
 const MobileMenu = (props: IProps) => {
 
     const handleCloseButtonClick = () => {
-        props.closeCallback();
+        if (props.closeCallback) props.closeCallback();
     }
 
     const handleLinkClick = () => {
-        props.closeCallback();
+        if (props.closeCallback) props.closeCallback();
     }
 
     return (

@@ -6,6 +6,17 @@
     -o-transition: none !important;
 }
 
+/* --- Content to fill vertical screen space --- */
+#__next {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
 
 /* --- Main styles --- */
 * {

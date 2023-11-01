@@ -10,7 +10,7 @@ const SupportingCarers: NextPage = () => {
     const title: string = 'Supporting Carers';
 
     return (
-        <div>
+        <>
             <CommonHead title={title} />
             <main>
                 <MobileMenu />
@@ -40,7 +40,7 @@ const SupportingCarers: NextPage = () => {
                 
             </main>
             <Footer />
-        </div>
+        </>
     )
 }
 

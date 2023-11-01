@@ -1,6 +1,19 @@
 import Link from "next/link"
+import { scrollToElement } from "../helpers/helpers";
 
 const Navbar = () => {
+
+    const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+
+        const sectionId: string = event.currentTarget.getAttribute('data-sectionid') || '';
+        const scrollTarget = document.getElementById(sectionId);
+
+        if (scrollTarget) {
+            event.preventDefault();
+            scrollToElement(scrollTarget);
+        }
+    }
+
     return (
         <nav id="nav-bar" className="hide-md">
             <div className="container grid-lg ">
@@ -17,7 +30,16 @@ const Navbar = () => {
                                 <li><Link href="/supported-living">Supported Living</Link></li>
                             </ul>
                         </li>
-                        <li><Link href="#testimonials">Testimonials</Link></li>
+                        <li>
+                            <Link
+                                legacyBehavior={false}
+                                href="/#testimonials"
+                                data-sectionid="testimonials"
+                                onClick={handleLinkClick}
+                            >
+                                Testimonials
+                            </Link>
+                        </li>
                         <li><Link href="#contact-us">Contact</Link></li>
                     </ul>
                 </nav>

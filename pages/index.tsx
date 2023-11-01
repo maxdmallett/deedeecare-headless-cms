@@ -13,7 +13,7 @@ import CommonHead from '../components/common-head';
 
 const Home: NextPage = () => {
     return (
-        <div>
+        <>
             <CommonHead />
             <main>
                 <LogoBar />
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
                 <Awards />
             </main>
             <Footer />
-        </div>
+        </>
     )
 }
 

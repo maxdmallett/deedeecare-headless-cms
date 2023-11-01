@@ -10,7 +10,7 @@ const SupportedLiving: NextPage = () => {
     const title: string = 'Supported Living';
 
     return (
-        <div>
+        <>
             <CommonHead title={title} />
             <main>
                 <MobileMenu />
@@ -32,7 +32,7 @@ const SupportedLiving: NextPage = () => {
                 
             </main>
             <Footer />
-        </div>
+        </>
     )
 }
 

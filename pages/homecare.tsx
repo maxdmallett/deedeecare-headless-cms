@@ -10,7 +10,7 @@ const Homecare: NextPage = () => {
     const title: string = 'Homecare';
 
     return (
-        <div>
+        <>
             <CommonHead title={title} />
             <main>
                 <MobileMenu />
@@ -38,7 +38,7 @@ const Homecare: NextPage = () => {
                 
             </main>
             <Footer />
-        </div>
+        </>
     )
 }
 

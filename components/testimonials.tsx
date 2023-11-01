@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Slider from 'react-slick';
+import Slider, { Settings } from 'react-slick';
 
-interface SliderSettings {
+/* interface SliderSettings {
     slidesToShow?: number;
     autoplay?: boolean;
     autoplaySpeed?: number;
@@ -10,9 +10,9 @@ interface SliderSettings {
     arrows?: boolean;
     settings?: SliderSettings;
     responsive?: SliderSettings[];
-}
+} */
 
-const settings: SliderSettings = {
+const settings: Settings = {
     slidesToShow: 3,
     autoplay: true,
     autoplaySpeed: 5000,
