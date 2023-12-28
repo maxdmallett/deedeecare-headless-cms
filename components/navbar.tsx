@@ -1,28 +1,51 @@
 import Link from "next/link"
 import { scrollToElement } from "../helpers/helpers";
 
-const Navbar = () => {
+export const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const sectionId: string = event.currentTarget.getAttribute('data-sectionid') || '';
+    const scrollTarget = document.getElementById(sectionId);
 
-    const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-
-        const sectionId: string = event.currentTarget.getAttribute('data-sectionid') || '';
-        const scrollTarget = document.getElementById(sectionId);
-
-        if (scrollTarget) {
-            event.preventDefault();
-            scrollToElement(scrollTarget);
-        }
+    if (scrollTarget) {
+        event.preventDefault();
+        scrollToElement(scrollTarget);
     }
+}
 
+const Navbar = () => {
     return (
-        <nav id="nav-bar" className="hide-md">
+        <nav id="nav-bar" className="hide-md"> 
             <div className="container grid-lg ">
                 <nav className="main_nav">
                     <ul>
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="#about-us">About</Link></li>
+                        <li>
+                            <Link
+                                legacyBehavior={false}
+                                href="/"
+                                data-sectionid="hero"
+                                onClick={handleLinkClick}
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                legacyBehavior={false}
+                                href="/#about-us"
+                                data-sectionid="about-us"
+                                onClick={handleLinkClick}
+                            >
+                                About
+                            </Link>
+                        </li>
                         <li className="submenu">
-                            <Link href="#services">Services</Link>
+                            <Link
+                                legacyBehavior={false}
+                                href="/#services"
+                                data-sectionid="services"
+                                onClick={handleLinkClick}
+                            >
+                                Services
+                            </Link>
                             <ul className="dropdown">
                                 <li><Link href="/supporting-carers">Supporting Carers</Link></li>
                                 <li><Link href="/mental-health-care">Mental Health Care</Link></li>
@@ -40,7 +63,16 @@ const Navbar = () => {
                                 Testimonials
                             </Link>
                         </li>
-                        <li><Link href="#contact-us">Contact</Link></li>
+                        <li>
+                            <Link
+                                legacyBehavior={false}
+                                href="/#contact-us"
+                                data-sectionid="contact-us"
+                                onClick={handleLinkClick}
+                            >
+                                Contact
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
