@@ -4,6 +4,7 @@ import Navbar from '../components/navbar';
 import MobileMenu from '../components/mobile-menu';
 import Footer from '../components/footer';
 import CommonHead from '../components/common-head';
+import BackToServicesButton from '../components/backToServicesButton';
 
 const Homecare: NextPage = () => {
 
@@ -33,6 +34,7 @@ const Homecare: NextPage = () => {
                             <li>Companionship</li>
                             <li>Journey to help meet up with a friend</li>				
                         </ul>
+                        <BackToServicesButton />
                     </div>
                 </div>
                 

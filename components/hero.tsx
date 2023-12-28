@@ -16,7 +16,7 @@ const Hero = () => {
                             href="/#about-us"
                             data-sectionid="about-us"
                             onClick={handleLinkClick}
-                            className="button shadow"
+                            className="primary-cta-button button shadow"
                         >
                             Find out more
                         </Link>

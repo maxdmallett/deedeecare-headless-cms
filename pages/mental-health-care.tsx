@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
 import LogoBar from '../components/logo-bar';
-import Navbar from '../components/navbar';
+import Navbar, { handleLinkClick } from '../components/navbar';
 import MobileMenu from '../components/mobile-menu';
 import Footer from '../components/footer';
 import CommonHead from '../components/common-head';
+import BackToServicesButton from '../components/backToServicesButton';
 
 const MentalHealthCare: NextPage = () => {
 
@@ -45,6 +46,7 @@ const MentalHealthCare: NextPage = () => {
                                 <li>We can work closely with the family and offer mood charts to keep track of the customer&apos;s mood on a daily basis.</li>
                             </ul>
                         </section>
+                        <BackToServicesButton />
 			        </div>
                 </div>
                 

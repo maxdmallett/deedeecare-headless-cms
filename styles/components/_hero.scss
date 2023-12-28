@@ -51,18 +51,4 @@
     p {
         margin-bottom: 35px;
     }
-
-    a {
-        display: inline-block;
-        padding: 15px 40px;
-        font-size: 16px;
-        background: $color-cta-green;
-        color: white;
-        transition: all 0.2s ease;
-        text-transform: uppercase;
-
-        &:hover {
-            background: $color-cta-green-hover;
-        }
-    }
 }

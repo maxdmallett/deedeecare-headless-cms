@@ -4,6 +4,20 @@
     border-radius: 6px;
     user-select: none;
 
+    &.primary-cta-button {
+        display: inline-block;
+        padding: 15px 40px;
+        font-size: 16px;
+        background: $color-cta-green;
+        color: white;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+    
+        &:hover {
+            background: $color-cta-green-hover;
+        }
+    }
+
     &.shadow {
         box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.16);
     }
