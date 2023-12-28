@@ -1,16 +1,6 @@
 import { useEffect, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
-
-/* interface SliderSettings {
-    slidesToShow?: number;
-    autoplay?: boolean;
-    autoplaySpeed?: number;
-    dots?: boolean;
-    breakpoint?: number;
-    arrows?: boolean;
-    settings?: SliderSettings;
-    responsive?: SliderSettings[];
-} */
+import { staticTestimonalList } from '../data/testimonials';
 
 const settings: Settings = {
     slidesToShow: 3,
@@ -66,7 +56,8 @@ const Testimonials = () => {
         .then(json => {
             const { data } = json;
             if (!data) {
-                console.log('failed to fetch testimonials') 
+                console.log('failed to fetch testimonials from contentful, using static list');
+                setTestimonials(staticTestimonalList);
                 return;
             }
             setTestimonials(data.testimonialCollection.items);

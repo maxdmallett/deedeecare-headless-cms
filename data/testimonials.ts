@@ -5,7 +5,7 @@ interface ITestimonial {
     client: string;
 }
 
-export const testimonalList: ITestimonial[] = [
+export const staticTestimonalList: ITestimonial[] = [
     {
         quote: 'Dionne and her team provide outstanding all-around care. Every aspect is covered to suit our needs and the team are passionate about the persons well-being. I would not hesitate to recommend this caring, lovely team.',
         client: 'Pat, friend of client'
